@@ -1,21 +1,22 @@
 <template>
   <div class="todoList">
-    <input type="text" v-model="newTask" />
-    <button @click="addTask()">Them</button>
-    <div v-for="(task, index) in tasks" :key="index">
+    <!-- <input type="text" v-model="newTask" />
+    <button @click="addTask()">Them</button> -->
+    <!-- <div v-for="(task, index) in tasks" :key="index">
       <input type="checkbox" v-model="task.done" />
       <span :class="{ done: task.done }">{{ task.content }}</span>
-    </div>
+    </div> -->
+    <taskData v-for="(task, index) in tasks" :key="index" :taskDataa="task" />
   </div>
 </template>
-
 <script>
+import taskData from "./taskData.vue";
 export default {
   data() {
     return {
       newTask: "",
       tasks: [
-        { content: "a", done: false },
+        { content: "aaa", done: false },
         { content: "b", done: false },
         { content: "c", done: false },
       ],
@@ -34,6 +35,7 @@ export default {
       console.log(oldValue);
     },
   },
+  components: { taskData },
 };
 </script>
 
