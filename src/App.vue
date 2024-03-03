@@ -8,10 +8,12 @@
     <h1 :class="{ daChon: selected, abc: xyz }">Nguyen Tinh 2</h1>
     <button @click="selected = !selected">Click</button>
     <todoList />
+    <taskSelector />
   </div>
 </template>
 <script>
 import todoList from "./components/todoList.vue";
+import taskSelector from "./components/taskSelector.vue";
 export default {
   data() {
     return {
@@ -19,7 +21,7 @@ export default {
       selected: true,
     };
   },
-  components: { todoList },
+  components: { todoList, taskSelector },
 };
 </script>
 
