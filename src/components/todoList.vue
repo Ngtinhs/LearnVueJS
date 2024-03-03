@@ -21,6 +21,8 @@ export default {
       ],
     };
   },
+  mounted() {},
+
   methods: {
     addTask: function () {
       this.tasks.push({ content: this.newTask, done: false });
