@@ -26,6 +26,12 @@ export default {
       this.tasks.push({ content: this.newTask, done: false });
     },
   },
+  watch: {
+    newTask: function (newValue, oldValue) {
+      console.log(newValue);
+      console.log(oldValue);
+    },
+  },
 };
 </script>
 
