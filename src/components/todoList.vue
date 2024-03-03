@@ -1,7 +1,7 @@
 <template>
   <div class="todoList">
     <input type="text" v-model="newTask" />
-    <button @click="tasks.push({ content: newTask, done: false })">Them</button>
+    <button @click="addTask()">Them</button>
     <div v-for="(task, index) in tasks" :key="index">
       <input type="checkbox" v-model="task.done" />
       <span :class="{ done: task.done }">{{ task.content }}</span>
@@ -20,6 +20,11 @@ export default {
         { content: "c", done: false },
       ],
     };
+  },
+  methods: {
+    addTask: function () {
+      this.tasks.push({ content: this.newTask, done: false });
+    },
   },
 };
 </script>
